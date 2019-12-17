@@ -1,2 +1,0 @@
-# update.php
-A repository
