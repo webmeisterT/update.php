@@ -80,16 +80,13 @@ if (isset($_POST['update'])) {
 
 }//end of POST check
 
-//codes to check GET request id parameter which is in index.php
+//codes to check GET request id parameter
 if (isset($_GET['id'])) {
     $id = mysqli_real_escape_string($conn, $_GET['id']);
-    //sql select statement
+  
     $sql1 = "SELECT * FROM pizzas WHERE id = $id";
 
-    //get query result
     $result1 = mysqli_query($conn, $sql1);
-
-    //fetch only one result with the function:mysqli_fetch_assoc and convert it from resource data-type to array data-type:associative
 
     $pizza1 = mysqli_fetch_assoc($result1);
     mysqli_free_result($result1);
